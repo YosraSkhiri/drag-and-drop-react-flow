@@ -1,0 +1,9 @@
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 132px;
+  height: 100%;
+  padding: 2.2rem 0;
+  background-color: #0f203a;
+}

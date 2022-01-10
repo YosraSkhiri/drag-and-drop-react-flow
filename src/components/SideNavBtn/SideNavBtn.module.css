@@ -1,0 +1,33 @@
+.sideNavBtnContainer {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex-direction: column;
+}
+
+.sideNavBtn {
+  display: flex;
+  background-color: #2e415d;
+  padding: .9rem;
+  border-radius: .8rem;
+}
+
+.sideNavBtn > svg {
+  width: 26px;
+  height: 26px;
+  margin: auto;
+  pointer-events: none;
+}
+
+.sideNavBtn > svg > path {
+  stroke: #FFFFFF;
+  stroke-width: 6;
+}
+
+.sideNavBtnLabel {
+  font-size: 12px;
+  color: #60718a;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}

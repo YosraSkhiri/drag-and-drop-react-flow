@@ -1,0 +1,34 @@
+.squareBtn,
+.roundBtn {
+  display: flex;
+  background-color: #0f203a;
+  width: 46px;
+  height: 46px;
+}
+
+.squareBtn > svg,
+.roundBtn > svg {
+  width: 20px;
+  margin: auto;
+  fill: #FFFFFF;
+}
+
+.squareBtn:first-child {
+  border-bottom: 1px solid #2e415d;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.squareBtn:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.squareBtnsGroup {
+  width: fit-content;
+}
+
+.roundBtn {
+  margin-bottom: .6rem;
+  border-radius: 50px;
+}
