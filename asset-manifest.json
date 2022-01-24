@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/drag-and-drop-react-flow/static/css/main.74fa143d.css",
-    "main.js": "/drag-and-drop-react-flow/static/js/main.d9779f65.js",
+    "main.css": "/drag-and-drop-react-flow/static/css/main.3396aac0.css",
+    "main.js": "/drag-and-drop-react-flow/static/js/main.5f05c93d.js",
     "index.html": "/drag-and-drop-react-flow/index.html",
-    "main.74fa143d.css.map": "/drag-and-drop-react-flow/static/css/main.74fa143d.css.map",
-    "main.d9779f65.js.map": "/drag-and-drop-react-flow/static/js/main.d9779f65.js.map"
+    "main.3396aac0.css.map": "/drag-and-drop-react-flow/static/css/main.3396aac0.css.map",
+    "main.5f05c93d.js.map": "/drag-and-drop-react-flow/static/js/main.5f05c93d.js.map"
   },
   "entrypoints": [
-    "static/css/main.74fa143d.css",
-    "static/js/main.d9779f65.js"
+    "static/css/main.3396aac0.css",
+    "static/js/main.5f05c93d.js"
   ]
 }
