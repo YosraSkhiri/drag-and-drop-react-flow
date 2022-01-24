@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: 132px;
+  width: 100px;
+  min-height: 480px;
   height: 100%;
   padding: 2.2rem 0;
   background-color: #0f203a;
+  border-bottom-left-radius: .6rem;
+  border-top-left-radius: .6rem;
 }

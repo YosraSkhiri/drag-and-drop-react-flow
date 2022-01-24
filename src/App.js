@@ -1,8 +1,9 @@
-import BlockBuilder from "./components/BlockBuilder";
+import "./style.css";
+import Page from "./components/Page/Page";
 
 function App() {
   return (
-    <BlockBuilder />
+    <Page />
   );
 }
 

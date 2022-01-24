@@ -52,15 +52,17 @@ button {
 
 #root {
   height: 100%;
+  height: 1000px; /* remove this */
   isolation: isolate;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
+/* Theming */
+.react-flow {
+  border-bottom-right-radius: .6rem;
+  border-top-right-radius: .6rem;
 }
+/* /Theming */
 
-.app-container {
-  display: flex;
-  height: 100%;
+.state-1 {
+  position: fixed;
 }

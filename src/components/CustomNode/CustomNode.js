@@ -7,7 +7,6 @@ import { Handle } from 'react-flow-renderer';
 import styles from "./CustomNode.module.css";
 
 export default memo(({ data }) => {
-
   const [showDetailsElement, setShowDetailsElement] = useState(false);
   const [showDropdownMenu, setShowDropdownMenu] = useState(false);
 
@@ -134,8 +133,12 @@ export default memo(({ data }) => {
     setShowDropdownMenu(false);
   };
 
+  const handleShowComments = () => {
+    data.showComments();
+    setShowDropdownMenu(false);
+  };
+
   const showDetailsDropdown = () => {
-    if (data.label === "Baloon") {
       return (
         <div className={styles.detailsDropdownWrapper}>
           <button className={styles.customNodeDetailsMenuBtn} onClick={handleNodeDropdownMenu}>
@@ -146,14 +149,20 @@ export default memo(({ data }) => {
           {
             showDropdownMenu ? 
             <ul className={styles.detailsDropdownContainer}>
+              {
+                data.label === "Baloon" ? (
+                  <li>
+                    <button className={styles.detailsDropdownBtn} onClick={handleShowDetails}>Show Details</button>
+                  </li>
+                ) : null
+              }
               <li>
-                <button className={styles.detailsDropdownBtn} onClick={handleShowDetails}>Show Details</button>
-              </li>
+                <button className={styles.detailsDropdownBtn} onClick={handleShowComments}>Comments</button>
+              </li>          
             </ul> : null
           } 
         </div>
       );
-    }
   };
 
   return (

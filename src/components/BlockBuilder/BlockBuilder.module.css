@@ -1,0 +1,36 @@
+.BlockBuilderWrapper {
+  padding: 2rem;
+}
+
+.BlockBuilderWrapperModal {
+  padding: 0rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+}
+
+.BlockBuilderContainer {
+  position: relative;
+  z-index: 200;
+  display: flex;
+  width: fit-content;
+  height: 100%;
+  margin: auto;
+  transition: height .3s ease-in-out;
+}
+
+.BlockBuilderBg {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 90;
+}
+
+.BlockBuilderReactFlowContainer {
+  transition: all .3s ease-in-out;
+}

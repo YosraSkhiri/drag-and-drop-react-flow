@@ -1,11 +1,14 @@
 import React, {
+  useState,
   useCallback,
 } from 'react';
 import { animate } from 'popmotion';
 import CustomControlBtn from './CustomControlBtn';
 import styles from "./CustomControlBtn.module.css";
 
-const CustomControls = ({reactFlowInstance}) => {
+const CustomControls = ({reactFlowInstance, expendBlockBuilderView}) => {
+  const [fullscreenIconClicked, setFullscreenIconClicked] = useState(false);
+
   const handleZoom = useCallback(
     (ratio) => () => {
       const { zoom } = reactFlowInstance.toObject();
@@ -35,8 +38,26 @@ const CustomControls = ({reactFlowInstance}) => {
     [reactFlowInstance]
   );
 
+  const handleContainerSize = () => {
+    expendBlockBuilderView();
+    setFullscreenIconClicked((state) => !state);
+  }
+
   return (
     <>
+      <CustomControlBtn callback={handleContainerSize} type="round">
+        {
+          fullscreenIconClicked ? (
+            <svg title="Collapse file preview" aria-label="Collapse file preview" role="img" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M12.465 4.836l.01-.018L15.65 1.65l.707.707-3.196 3.196-.754.45h3.597v1h-5v-5h1V5.67l.46-.834h.001zm-6.922 8.335l-.01.018-3.176 3.168-.707-.707 3.196-3.196.754-.45H2.004v-1h5v5h-1v-3.667l-.461.835v-.001z" fillRule="nonzero" fillOpacity="1" fill="#FFF" stroke="none" />
+            </svg>
+          ) : (
+            <svg title="Expand file preview" aria-label="Expand file preview" role="img" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M14.54 4.168l-3.187 3.186-.708-.708 3.197-3.197.753-.449H11V2h5v5h-1V3.334l-.46.834zM3.46 13.832l3.186-3.186.708.708-3.198 3.197-.752.449H7v1H2v-5h1v3.666l.46-.834z" fillRule="nonzero" fill="#FFF" stroke="none" />
+            </svg>
+          )
+        }
+      </CustomControlBtn>
       <CustomControlBtn callback={handleTransform({ x: 0, y: 0, zoom: 1 })} type="round">
         <svg viewBox="0 0 98 97">
           <circle cx="49.5" cy="48.5" r="38.5" strokeWidth="6" />

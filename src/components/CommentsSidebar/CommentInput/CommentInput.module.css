@@ -1,0 +1,27 @@
+.CommentInputContainer {
+  position: relative;
+}
+
+.CommentInput {
+  padding: .8rem 2.5rem .8rem .8rem;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: .053px;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.CommentInputSubmitBtn {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  display: flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgb(216, 216, 216);
+}
+
+.CommentInputSubmitBtn > svg {
+  margin: auto;
+}
