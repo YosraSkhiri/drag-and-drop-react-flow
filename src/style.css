@@ -60,6 +60,9 @@ button {
 .react-flow {
   border-bottom-right-radius: .6rem;
   border-top-right-radius: .6rem;
+  border-bottom-left-radius: .6rem;
+  border-top-left-radius: .6rem;
+  border: 3px solid #0f203a;
 }
 /* /Theming */
 

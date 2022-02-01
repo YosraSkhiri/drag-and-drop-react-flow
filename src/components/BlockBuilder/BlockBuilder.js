@@ -1,6 +1,7 @@
 import React, {
   useState,
   useRef,
+  useEffect,
 } from 'react';
 import ReactFlow, {
   Controls,
@@ -109,6 +110,14 @@ const BlockBuilder = ({ width, height }) => {
     calculateContainerDimensions();
   };
 
+  const expendBlockBuilderViewOnClick = () => {
+    console.log("jjj")
+    if (!isExtended) {
+      setIsExtended((state) => !state);
+      calculateContainerDimensions();
+    }
+  }
+
   const calculateContainerDimensions = () => {
     let style = {
       width: "",
@@ -144,6 +153,10 @@ const BlockBuilder = ({ width, height }) => {
     calculateContainerDimensions();
   };
 
+  const handlePaneClick = () => {
+    expendBlockBuilderViewOnClick()
+  };
+
   if (width && height) {
     return (
       <>
@@ -153,11 +166,18 @@ const BlockBuilder = ({ width, height }) => {
               style={{ height: isExtended ? containerDimensions.height : height }}
               className={styles.BlockBuilderContainer}
             >
-              <SideNav />
-              <CommentsSidebar
-                showCommentsSidebar={showCommentsSidebar}
-                setShowCommentsSidebar={setShowCommentsSidebar}
-              />
+              {
+                isExtended ? (
+                  <>
+                    <SideNav />
+                    <CommentsSidebar
+                      showCommentsSidebar={showCommentsSidebar}
+                      setShowCommentsSidebar={setShowCommentsSidebar}
+                    />
+                  </>
+                ) : null
+              }
+              
               <div
                 style={calculateContainerDimensions()}
                 className={styles.BlockBuilderReactFlowContainer}
@@ -171,7 +191,9 @@ const BlockBuilder = ({ width, height }) => {
                   onDragOver={onDragOver}
                   onElementsRemove={onElementsRemove}
                   onConnect={onConnect}
+                  onPaneClick={handlePaneClick}
                   connectionMode="loose"
+                  zoomOnDoubleClick={false}
                 >
                   <MiniMap
                     nodeStrokeWidth={0}
@@ -190,21 +212,28 @@ const BlockBuilder = ({ width, height }) => {
                       backgroundColor: "#f2f4f7",
                     }}
                   />
-                  <Controls
-                    showInteractive={false}
-                    showFitView={false}
-                    showZoom={false}
-                    style={{
-                      left: "100%",
-                      boxShadow: "none",
-                      transform: "translateX(-150%)",
-                    }}
-                  >
-                    <CustomControls
-                      reactFlowInstance={reactFlowInstance}
-                      expendBlockBuilderView={expendBlockBuilderView}
-                    />
-                  </Controls>
+                  {
+                    isExtended ? (
+                      <>
+                        <Controls
+                          showInteractive={false}
+                          showFitView={false}
+                          showZoom={false}
+                          style={{
+                            left: "100%",
+                            boxShadow: "none",
+                            transform: "translateX(-150%)",
+                          }}
+                        >
+                          <CustomControls
+                            reactFlowInstance={reactFlowInstance}
+                            expendBlockBuilderView={expendBlockBuilderView}
+                          />
+                        </Controls>
+                      </>
+                    ) : null
+                  }
+                  
                 </ReactFlow>
               </div>
             </div>
