@@ -35,7 +35,7 @@ const BlockBuilder = ({ width, height }) => {
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [elements, setElements] = useState([]);
-  const [isExtended, setIsExtended] = useState(true); /** */
+  const [isExtended, setIsExtended] = useState(false);
   const [showSubMenu, setShowSubMenu] = useState(false);
 
   const onConnect = (params) => setElements((els) =>
