@@ -1,8 +1,19 @@
 .sideNavBtnContainer {
+  position: relative;
   display: flex;
   align-items: center;
   gap: .6rem;
   flex-direction: column;
+}
+
+.sideNavBtnContainerBorder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  height: 100%;
+  width: 6px;
+  background-color: #FC9431;
 }
 
 .sideNavBtn {

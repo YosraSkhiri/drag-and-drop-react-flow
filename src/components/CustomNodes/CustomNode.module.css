@@ -1,7 +1,6 @@
 .customNodeContainer {
   position: relative;
-  width: 310px;
-  height: 320px;
+  width: 340px;
   border: 1px solid #eff2f7;
   border-radius: .5rem;
   background-color: #FFFFFF;
@@ -27,6 +26,7 @@
   display: flex;
   padding: .6rem;
   border-radius: .6rem;
+  background-color: #F0F0F3;
 }
 
 .customNodeIcon > svg {
@@ -35,14 +35,24 @@
   margin: auto;
 }
 
-.customNodeIcon > svg > path {
-  stroke: #FFFFFF;
-  stroke-width: 6;
-}
-
 .customNodeLabel {
   font-weight: 700;
   font-size: 1rem;
+}
+
+.customNodeActionsContainer {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.customNodeActionsBtn {
+  padding: .2rem .5rem;
+  border-radius: .4rem;
+  font-size: 12px;
+  font-weight: 700;
+  color: #626263;
+  background-color: #D9E7FE;
 }
 
 .detailsDropdownWrapper {
@@ -83,7 +93,31 @@
 }
 
 .customNodeBody {
+  max-height: 320px;
+  min-height: 120px;
   padding: 1.5rem 1.2rem;
+  overflow-y: auto;
+}
+
+/* width */
+.customNodeBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.customNodeBody::-webkit-scrollbar-track {
+  background: #E8F0FB;
+}
+
+/* Handle */
+.customNodeBody::-webkit-scrollbar-thumb {
+  background: #4B90E0;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+.customNodeBody::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .customNodeBodyTxt {
@@ -105,18 +139,9 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
-.customNodeDetails::before {
-  content: "";
-  position: absolute;
-  z-index: 100;
-  left: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0; 
-  height: 0; 
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent; 
-  border-right: 10px solid #FFFFFF;
+.customNodeDetailsText {
+  font-size: 13px;
+  opacity: .8;
 }
 
 .customNodeDetailsHeader {
@@ -210,11 +235,39 @@
   color: #253754;
 }
 
-.groupControlInput {
+.groupControlTextarea {
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  min-height: 100px;
   padding: .5rem;
   border: 1px solid rgb(231, 231, 231);
-  border-radius: .6rem;
+  border-radius: .4rem;
+  font-size: 14px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 3px;
+  overflow-y: auto;
+  resize: none;
+}
+
+/* width */
+.groupControlTextarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.groupControlTextarea::-webkit-scrollbar-track {
+  background: #E8F0FB;
+}
+
+/* Handle */
+.groupControlTextarea::-webkit-scrollbar-thumb {
+  background: #4B90E0;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+.groupControlTextarea::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .groupControlInput::placeholder {
@@ -245,4 +298,29 @@
 
 .primaryIconBtnIcon > svg > path {
   fill: #FFFFFF;
+}
+
+.inputsGroup {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  display: block;
+  height: 39px;
+  padding: .5rem .6rem;
+  border-radius: .5rem;
+  border: 1px solid rgb(158, 158, 158);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.input:first-child {
+  flex: 1;
+}
+
+.input:last-child {
+  flex: 2;
 }
