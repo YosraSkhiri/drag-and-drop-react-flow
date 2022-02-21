@@ -120,6 +120,21 @@ export default memo(({ data }) => {
         { showDetails() }
       </div>
       <Handle
+        type="target"
+        id={`top_reply_${data.id}`}
+        key={`top_reply_${data.id}`}
+        position="top"
+        isConnectable={true}
+        style={{
+          transform: "translate(25%, -25%)",
+          width: 16,
+          height: 16,
+          background: "#f0f0f0",
+          border: "4px solid #2d5ce5",
+          boxShadow: "0px 0px 0px 3px #f0f0f0, rgba(0, 0, 0, 0.07) 0px 4px 4px"
+        }}
+      />
+      <Handle
         type="source"
         id={`bottom_reply_${data.id}`}
         key={`bottom_reply_${data.id}`}

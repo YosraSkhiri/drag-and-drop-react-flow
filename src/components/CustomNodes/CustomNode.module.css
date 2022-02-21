@@ -130,7 +130,6 @@
   top: 0;
   left: 100%;
   width: 280px;
-  min-height: 320px;
   padding: 1.2rem;
   margin-left: 1rem;
   background-color: #FFFFFF;
@@ -315,6 +314,7 @@
   border: 1px solid rgb(158, 158, 158);
   font-size: 14px;
   line-height: 1.5;
+  background-color: #FFFFFF;
 }
 
 .input:first-child {
